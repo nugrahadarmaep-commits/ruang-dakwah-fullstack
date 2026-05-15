@@ -1,0 +1,239 @@
+/* Import Google Fonts: Poppins untuk kesan modern dan rapi */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* =========================================
+   1. VARIABEL TEMA (LIGHT MODE - DEFAULT)
+========================================= */
+:root {
+  --teal-main: #008080;
+  --teal-dark: #006666;
+  --teal-light: rgba(0, 128, 128, 0.1);
+  
+  --bg-outside: #e9ecef; 
+  --bg-body: #f8f9fa; 
+  --bg-card: #ffffff; 
+  --text-utama: #2b2b2b; 
+  --text-redup: #6c757d; 
+  --border-halus: #006666;
+}
+
+/* =========================================
+   2. VARIABEL TEMA (DARK MODE)
+   Taruh murni di 'html', jangan dicampur class lain!
+========================================= */
+html[data-theme="dark"] {
+  --bg-outside: #121212; /* Hitam pekat untuk sisi luar Desktop */
+  --bg-body: #1e1e1e;    /* Hitam layar HP / Main App */
+  --bg-card: #252526;    /* Hitam Kartu / Pop up */
+  --text-utama: #d4d4d4; 
+  --text-redup: #858585; 
+  --border-halus: #3e3e42;
+}
+
+/* =========================================
+   3. OBAT PAKSA BOOTSTRAP
+   Baru di sini lu paksa class bawaan Bootstrap 
+   buat nurut sama variabel Dark Mode lu!
+========================================= */
+html[data-theme="dark"] .bg-white,
+html[data-theme="dark"] .bg-light {
+  /* Kita panggil variabel dari mading atas pakai 'var()' */
+  background-color: var(--bg-card) !important; 
+  color: var(--text-utama) !important;
+}
+
+html[data-theme="dark"] .text-dark {
+  color: var(--text-utama) !important;
+}
+
+html[data-theme="dark"] .text-muted {
+  color: var(--text-redup) !important;
+}
+
+html[data-theme="dark"] .border {
+  border-color: var(--border-halus) !important;
+}
+
+/* =========================================
+   2. BASE STYLING & ANIMASI
+   ========================================= */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-outside) !important; /* Warna luar */
+  color: var(--text-utama);
+  animation: fadeIn 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-tap-highlight-color: transparent; /* Hilangkan kotak biru pas di-tap */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Paksa teks bawaan bootstrap ngikutin tema kita */
+.text-dark { color: var(--text-utama) !important; }
+.text-muted { color: var(--text-redup) !important; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   3. RESPONSIVE LAYOUT (SENSOR HP & DESKTOP 3 KOLOM)
+   ========================================= */
+
+/* Pengaturan Dasar (Posisi Tengah untuk HP) */
+body > .container,
+body > header,
+body > main,
+body > nav.fixed-bottom,
+body > div.fixed-bottom,
+body > section.container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: var(--bg-body); 
+  color: var(--text-utama);
+  left: 0;
+  right: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 📱 SENSOR 1: MODE HP (Layar di bawah 991px) */
+@media (max-width: 991px) {
+  body > .container,
+  body > header,
+  body > main,
+  body > nav.fixed-bottom,
+  body > div.fixed-bottom,
+  body > section.container {
+    max-width: 480px; /* Kunci ukuran HP */
+  }
+  
+  /* Sembunyikan Sidebar & Widget kalau di HP */
+  .desktop-sidebar, .desktop-widget {
+      display: none !important;
+  }
+}
+
+/* 💻 SENSOR 2: MODE DESKTOP DASHBOARD (Layar 992px ke atas) */
+@media (min-width: 992px) {
+  body {
+      background-color: var(--bg-outside) !important; /* Luarnya gelap/abu */
+  }
+
+  /* Lebarkan kontainer utama biar muat 3 kolom */
+  body > .container,
+  body > header,
+  body > main,
+  body > section.container {
+    max-width: 1200px; /* Lebar ala dashboard pro */
+    background-color: transparent !important; /* Biar nyatu sama background luar */
+  }
+  
+  /* MATIKAN NAVIGASI BAWAH & HEADER HP! */
+  nav.fixed-bottom,
+  body > div.fixed-bottom,
+  header.mobile-only {
+    display: none !important;
+  }
+
+  /* Hilangkan margin atas main biar sejajar rapi */
+  main.container {
+      margin-top: 40px !important; 
+  }
+}
+
+/* =========================================
+   4. KUSTOMISASI WARNA & KOMPONEN
+   ========================================= */
+.text-teal { color: var(--teal-main) !important; }
+.bg-teal { background-color: var(--teal-main) !important; color: white; }
+
+/* Tombol Kustom */
+.btn-teal { background-color: var(--teal-main); color: white; border: none; }
+.btn-teal:hover { background-color: var(--teal-dark); color: white; }
+.btn-outline-teal { border-color: var(--teal-main); color: var(--teal-main); }
+.btn-outline-teal:hover { background-color: var(--teal-main); color: white; }
+
+/* Efek Tombol Luxury */
+.btn-luxury { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.btn-luxury:active { transform: scale(0.95); }
+
+/* Efek Kartu Luxury (Soft Elevate + Dark Mode Ready) */
+.card, .card-custom {
+  background-color: var(--bg-card) !important;
+  color: var(--text-utama) !important;
+  border-color: var(--border-halus) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
+}
+.card-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px var(--teal-light) !important;
+}
+
+/* Form Input (Biar pas ngetik di Dark Mode warnanya nggak ngebug) */
+.form-control {
+  background-color: var(--bg-body) !important;
+  color: var(--text-utama) !important;
+  border-color: var(--border-halus) !important;
+}
+.form-control:focus {
+  border-color: var(--teal-main) !important;
+  box-shadow: 0 0 0 0.25rem var(--teal-light) !important;
+}
+
+/* =========================================
+   5. KUSTOMISASI NAVIGASI & SCROLLBAR
+   ========================================= */
+
+/* Navigasi Bawah (Floating Effect) */
+nav.fixed-bottom {
+  background-color: var(--bg-card) !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+  border-top: 1px solid var(--border-halus) !important;
+  border-radius: 20px 20px 0 0;
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 1030;
+  transition: background-color 0.3s ease;
+}
+
+nav.fixed-bottom .nav-link {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+nav.fixed-bottom .nav-link:active {
+  transform: scale(0.9);
+}
+
+/* Hilangkan Scrollbar Default biar bersih kayak Aplikasi Native */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Khusus list Q&A di halaman interaksi */
+.qa-group {
+  position: relative;
+}
+
+/* =========================================
+   6. OBAT ANTI BELANG (FIXED SELECTOR)
+   ========================================= */
+
+/* Pastikan body luar ikut hitam */
+html[data-theme="dark"] body {
+    background-color: var(--bg-outside) !important;
+}
+
+/* Paksa semua card, bg-white, dan bg-light di semua halaman jadi gelap */
+html[data-theme="dark"] .bg-white,
+html[data-theme="dark"] .bg-light,
+html[data-theme="dark"] .card {
+    background-color: var(--bg-card) !important;
+    color: var(--text-utama) !important;
+    border-color: var(--border-halus) !important;
+}
+
+/* Amankan Header dan Navigasi Bawah */
+html[data-theme="dark"] header, 
+html[data-theme="dark"] nav.fixed-bottom {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-halus) !important;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabung - Ruang Dakwah</title>
+
+    <!-- link menuju bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- google fonts -->
+
+    <!-- link menuju css -->
+    <link rel="stylesheet" href="/dist/css/style.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e0f2f1 100%);
+            min-height: 100vh;
+        }
+        .step-indicator {
+            height: 4px;
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 2px;
+            margin-bottom: 20px;
+        }
+        .step-progress {
+            height: 100%;
+            width: 50%; /* Anggap aja ini step 1 dari 2 */
+            background: #008080;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-4 shadow-lg border-0" style="max-width: 450px; width: 100%; border-radius: 25px;">
+            
+            <!-- Indikator Biar Gak Bingung -->
+            <div class="step-indicator">
+                <div class="step-progress"></div>
+            </div>
+
+            <div class="mb-4">
+                <h3 class="fw-bold text-dark mb-1">Buat Akun Baru</h3>
+                <p class="text-muted small">Lengkapi data untuk akses penuh Ruang Dakwah</p>
+            </div>
+
+            <form id="registerForm">
+                <!-- Baris Nama & Email biar gak terlalu panjang kebawah -->
+                <div class="mb-3">
+                    <label class="form-label small fw-bold text-secondary">Siapa Nama Kamu?</label>
+                    <input type="text" class="form-control form-control-lg fs-6 shadow-sm" id="regNama" placeholder="Contoh: Subuhsita Brownies" required style="border-radius: 12px;">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label small fw-bold text-secondary">Alamat Email</label>
+                    <input type="email" class="form-control form-control-lg fs-6 shadow-sm" id="regEmail" placeholder="text@email.com" required style="border-radius: 12px;">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label small fw-bold text-secondary">Kata Sandi Aman</label>
+                    <input type="password" class="form-control form-control-lg fs-6 shadow-sm" id="regPassword" placeholder="Min. 8 karakter" required style="border-radius: 12px;">
+                    <div class="form-text" style="font-size: 0.65rem;">Gunakan kombinasi huruf dan angka ya!</div>
+                </div>
+
+                <button type="submit" class="btn btn-lg w-100 fw-bold shadow" style="background-color: #008080; color: white; border-radius: 15px; padding: 12px;">
+                    Konfirmasi & Daftar
+                </button>
+            </form>
+
+            <div class="text-center mt-4 pt-2 border-top">
+                <p class="small text-muted">Sudah punya akses? <a href="login.html" class="fw-bold text-decoration-none" style="color: #008080;">Login di sini</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/dist/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Ruang Dakwah</title>
+
+    <!-- link menuju bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- link menuju css -->
+    <link rel="stylesheet" href="/dist/css/style.css">
+</head>
+
+<body class="bg-light pb-5">
+
+    <!-- wadah utama 3 kolom (desktop) & 1 kolom (hp) -->
+    <div class="container" style="margin-top: 15px; margin-bottom: 80px;">
+        <div class="row gx-4">
+
+            <!-- kolom kiri: sidebar navigasi desktop -->
+            <aside class="col-lg-3 desktop-sidebar d-none d-lg-block">
+                <div class="sticky-top" style="top: 30px;">
+
+                    <!-- logo aplikasi -->
+                    <div class="text-center mb-5">
+                        <i class="bi bi-mosque" style="font-size: 2.8rem; color: #008080;"></i>
+                        <h5 class="fw-bold text-dark mt-2 mb-0">Ruang Dakwah</h5>
+                    </div>
+                    
+                    <!-- menu vertikal dekstop (transparan untuk yang tidak aktif) -->
+                    <div class="d-flex flex-column gap-2 pe-lg-4">
+                        <a href="beranda.html" class="btn text-start rounded-4 px-4 py-3 fw-bold shadow-sm" style="background-color: #008080; color: white;">
+                            <i class="bi bi-house-door-fill me-3 fs-5 align-middle"></i> Beranda
+                        </a>
+                        <a href="jadwal.html" class="btn bg-transparent text-start rounded-4 px-4 py-3 text-dark border-0 shadow-none fw-semibold btn-luxury">
+                            <i class="bi bi-calendar-event me-3 text-muted fs-5 align-middle"></i> Jadwal
+                        </a>
+                        <a href="tanya_jawab.html" class="btn bg-transparent text-start rounded-4 px-4 py-3 text-dark border-0 shadow-none fw-semibold btn-luxury">
+                            <i class="bi bi-chat-dots me-3 text-muted fs-5 align-middle"></i> Tanya Jawab
+                        </a>
+                        <a href="profil.html" class="btn bg-transparent text-start rounded-4 px-4 py-3 text-dark border-0 shadow-none fw-semibold btn-luxury">
+                            <i class="bi bi-person me-3 text-muted fs-5 align-middle"></i> Profil
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- kolom tengah: konten utama (beranda hp) -->
+            <div class="col-12 col-lg-6">
+                
+                <!-- header start -->
+                <header class="d-flex justify-content-between align-items-center pt-4 pb-3 bg-white shadow-sm sticky-top px-3" style="border-radius: 10px; z-index: 1020;">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Darma" alt="Profile" class="rounded-circle border" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div>
+                            <p class="text-muted mb-0 small">Selamat Pagi,</p>
+                            <h5 class="fw-bold mb-0 text-dark" id="namaBeranda">User 👋</h5>
+                        </div>
+                    </div>
+
+                    <button id="btnToggleTema" class="btn btn-light rounded-circle shadow-sm border-0 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: var(--bg-card) !important;">
+                        <i class="bi bi-moon-fill" id="ikonTema" style="color: var(--text-utama);"></i>
+                    </button>
+                </header>
+                <!-- header end -->
+
+                <!-- main content start -->
+                <main class="mt-4">
+                    <section class="mb-4">
+                        <div class="card border-0 overflow-hidden shadow-sm card-custom" style="border-radius: 25px; position: relative; background: #008080;">
+                            <img src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?auto=format&fit=crop&w=800&q=80" class="card-img w-100" alt="Kajian Akbar Background" style="opacity: 0.9; min-height: 250px; object-fit: cover;">
+                            <div class="card-img-overlay d-flex flex-column justify-content-center text-center text-white px-4">
+                                <span class="badge bg-white text-teal mb-3 align-self-center py-2 px-3 fw-bold" style="border-radius: 50px; color: #008080; width: fit-content;">KAJIAN AKBAR TERDEKAT</span>
+                                <h2 class="fw-bold lh-base">MENELADANI AKHLAK RASULULLAH</h2>
+                                <p class="small opacity-75">Masjid Agung Sidoarjo, 18 Mei 2026</p>
+                                <div class="mt-3">
+                                    <button class="btn btn-light text-teal fw-bold px-4 py-2 btn-luxury" style="border-radius: 12px; color: #008080;">Daftar Sekarang</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center gap-1 mt-3">
+                            <span class="bg-teal" style="width: 10px; height: 6px; border-radius: 10px; background-color: #008080;"></span>
+                            <span class="bg-secondary opacity-25" style="width: 6px; height: 6px; border-radius: 50%;"></span>
+                            <span class="bg-secondary opacity-25" style="width: 6px; height: 6px; border-radius: 50%;"></span>
+                        </div>
+                    </section>
+
+                    <section class="row g-3 px-1">
+                        <div class="col-12 text-center text-muted py-4 border-dashed rounded-4" style="border: 2px dashed #ddd;">
+                            <p class="mb-0">Aktivitas lainnya akan muncul di sini</p>
+                        </div>
+                    </section>
+                </main>
+                <!-- main content end -->
+            </div>
+
+            <!-- kolom kanan: widget desktop -->
+            <aside class="col-lg-3 desktop-widget d-none d-lg-block">
+                <div class="sticky-top gap-3 d-flex flex-column" style="top: 30px;">
+                    
+                    <!-- widget notifikasi -->
+                    <div class="card card-custom border-0 rounded-4 p-3 shadow-sm">
+                        <h6 class="fw-bold text-dark border-bottom pb-2 mb-3">Notifikasi</h6>
+                        <ul class="list-unstyled mb-0 small">
+                            <li class="mb-2 text-dark"><i class="bi bi-bell text-warning me-2"></i> Pengingat: Kajian Akbar besok!</li>
+                            <li class="mb-0 text-dark"><i class="bi bi-chat-left-text text-teal me-2"></i> Ada tanggapan baru di Q&A.</li>
+                        </ul>
+                    </div>
+
+                    <!-- widget materi disimpan -->
+                    <div class="card card-custom border-0 rounded-4 p-3 shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+                            <h6 class="fw-bold text-dark mb-0">Materi Disimpan</h6>
+                            <a href="sematkan.html" class="text-muted"><i class="bi bi-three-dots"></i></a>
+                        </div>
+                        <ul class="list-unstyled mb-0 small">
+                            
+                            <!-- item 1: materi -->
+                            <li class="mb-3 border-bottom border-dashed pb-3">
+                                <div class="d-flex align-items-start gap-3 mb-2">
+                                    <div class="bg-primary bg-opacity-10 text-primary rounded d-flex align-items-center justify-content-center mt-1" style="width: 32px; height: 32px; min-width: 32px;">
+                                        <i class="bi bi-file-earmark-text"></i>
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-bold text-dark lh-sm mb-1" style="font-size: 0.85rem;">Ringkasan Fikih Muamalah</span>
+                                        <span class="text-muted d-block" style="font-size: 0.75rem;">Ustaz Adi Hidayat</span>
+                                    </div>
+                                </div>
+                                <a href="sematkan.html" class="btn btn-outline-teal btn-sm w-100 rounded-pill fw-semibold" style="font-size: 0.75rem; background-color: #008080; color: white;">Baca Selengkapnya</a>
+                            </li>
+
+                            <!-- item 2: q&a -->
+                            <li>
+                                <div class="d-flex align-items-start gap-3 mb-2">
+                                    <div class="bg-info bg-opacity-10 text-info rounded d-flex align-items-center justify-content-center mt-1" style="width: 32px; height: 32px; min-width: 32px;">
+                                        <i class="bi bi-chat-quote"></i>
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-bold text-dark lh-sm mb-1" style="font-size: 0.85rem;">Hukum sedekah jariyah?</span>
+                                        <span class="text-muted d-block" style="font-size: 0.75rem;">Arsip Tanya Jawab</span>
+                                    </div>
+                                </div>
+                                <a href="sematkan.html" class="btn btn-outline-teal btn-sm w-100 rounded-pill fw-semibold" style="font-size: 0.75rem; background-color: #008080; color: white;">Baca Selengkapnya</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <!-- widget daftar kajian saya -->
+                    <div class="card card-custom border-0 rounded-4 p-3 shadow-sm mb-4">
+                        <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+                            <h6 class="fw-bold text-dark mb-0">Daftar Kajian Saya</h6>
+                            <a href="tiket.html" class="text-muted"><i class="bi bi-three-dots"></i></a>
+                        </div>
+                        <ul class="list-unstyled mb-0 small">
+                            
+                            <!-- item 1: tiket aktif -->
+                            <li>
+                                <div class="d-flex align-items-start gap-3 mb-2">
+                                    <div class="bg-success bg-opacity-10 text-success rounded d-flex align-items-center justify-content-center mt-1" style="width: 32px; height: 32px; min-width: 32px;">
+                                        <i class="bi bi-ticket-perforated"></i>
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-bold text-dark lh-sm mb-1" style="font-size: 0.85rem;">Kajian Akbar: Akhlak Rasulullah</span>
+                                        <span class="text-muted d-block" style="font-size: 0.75rem;">18 Mei 2026 • Masjid Agung</span>
+                                    </div>
+                                </div>
+                                <!-- tombol solid karena ini tiket penting -->
+                                <a href="tiket.html" class="btn btn-outline-teal btn-sm w-100 rounded-pill fw-semibold" style="font-size: 0.75rem; background-color: #008080; color: white;">Baca Detail</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- navbar start (hanya muncul di hp) -->
+    <nav class="navbar navbar-light bg-white border-top fixed-bottom py-2 d-lg-none">
+        <div class="container d-flex justify-content-around">
+            <a href="beranda.html" class="nav-link text-center active text-teal">
+                <i class="bi bi-house-door-fill fs-4" style="color: #008080;"></i>
+                <small class="d-block" style="font-size: 10px;">Beranda</small>
+            </a>
+            <a href="jadwal.html" class="nav-link text-center text-muted">
+                <i class="bi bi-calendar-event fs-4"></i>
+                <small class="d-block" style="font-size: 10px;">Jadwal</small>
+            </a>
+            <a href="tanya_jawab.html" class="nav-link text-center text-muted">
+                <i class="bi bi-chat-dots fs-4"></i>
+                <small class="d-block" style="font-size: 10px;">Tanya Jawab</small>
+            </a>
+            <a href="profil.html" class="nav-link text-center text-muted">
+                <i class="bi bi-person fs-4"></i>
+                <small class="d-block" style="font-size: 10px;">Profil</small>
+            </a>
+        </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!-- link menuju js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/dist/js/ui.js"></script>
+    <script src="/dist/js/auth.js"></script>
+</body>
+</html>

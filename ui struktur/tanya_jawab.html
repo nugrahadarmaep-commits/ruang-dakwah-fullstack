@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanya Jawab - Ruang Dakwah</title>
+
+    <!-- Link CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <!-- Link Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Link menuju css -->
+    <link rel="stylesheet" href="/dist/css/style.css">
+</head>
+
+<body class="bg-light" style="padding-bottom: 140px;">
+
+    <header class="container pt-4 pb-3 bg-white shadow-sm sticky-top">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 class="fw-bold mb-0">Ruang Tanya Jawab</h4>
+            <i class="bi bi-question-circle fs-5 text-teal" style="color: #008080;"></i>
+        </div>
+        <p class="text-muted small mb-0 mt-2">Arsip Pertanyaan Publik</p>
+    </header>
+
+    <main class="container mt-3 mb-5 pb-4">
+        <div id="chatContainer" class="d-flex flex-column gap-3 scroll-area">
+            <p class="text-center text-muted small mt-4">Memuat obrolan publik...</p>
+        </div>
+    </main>
+
+    <div class="fixed-bottom bg-white border-top p-3 shadow-lg" style="bottom: 70px; border-radius: 20px 20px 0 0;">
+        <div class="container">
+            <div class="input-group">
+                <input type="text" id="chatInput" class="form-control bg-light border-0 py-2" placeholder="Ketik obrolan publik..." style="border-radius: 12px 0 0 12px;">
+                <button id="btnKirimChat" class="btn btn-teal px-3" style="background-color: #008080; color: white; border-radius: 0 12px 12px 0;">
+                    <i class="bi bi-send-fill"></i>
+                </button>
+            </div>
+            
+            <button class="btn btn-teal w-100 mt-2 py-2 fw-bold btn-luxury" style="background-color: #008080; color: white; border-radius: 12px; font-size: 13px;">
+                <i class="bi bi-patch-question me-1"></i> Aturan Chat
+            </button>
+        </div>
+    </div>
+
+    <!-- navbar start -->
+    <nav class="navbar navbar-light bg-white border-top fixed-bottom py-2">
+        <div class="container d-flex justify-content-around">
+            <a href="beranda.html" class="nav-link text-center text-muted">
+                <i class="bi bi-house-door fs-4"></i>
+                <small class="d-block" style="font-size: 10px;">Beranda</small>
+            </a>
+            <a href="jadwal.html" class="nav-link text-center text-muted">
+                <i class="bi bi-calendar-event fs-4"></i>
+                <small class="d-block" style="font-size: 10px;">Jadwal</small>
+            </a>
+            <a href="tanya_jawab.html" class="nav-link text-center active text-teal">
+                <i class="bi bi-chat-dots-fill fs-4" style="color: #008080;"></i>
+                <small class="d-block" style="font-size: 10px;">Tanya Jawab</small>
+            </a>
+            <a href="profil.html" class="nav-link text-center text-muted">
+                <i class="bi bi-person fs-4"></i>
+                <small class="d-block" style="font-size: 10px;">Profil</small>
+            </a>
+        </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!-- link menuju js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/dist/js/ui.js"></script>
+    <script src="/dist/js/auth.js"></script>
+    <script src="/dist/js/tanya_jawab.js"></script>
+</body>
+</html>
