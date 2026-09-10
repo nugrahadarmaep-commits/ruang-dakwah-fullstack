@@ -1,7 +1,5 @@
-# Abaikan folder cache Python
+
 __pycache__/
 *.pyc
-
-# Abaikan file database lokal
 *.db
 instance/
